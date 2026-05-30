@@ -357,4 +357,839 @@ nav.scrolled{height:58px;box-shadow:0 4px 30px rgba(13,66,102,.1)}
 .mc-emoji{
   width:54px;height:54px;flex-shrink:0;
   background:linear-gradient(135deg,var(--ice),var(--ice2));
-  border-radius:12px;border:1px so
+  border-radius:12px;border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+}
+.mc-body{flex:1;min-width:0}
+.mc-name{font-size:.88rem;font-weight:700;color:var(--txt);margin-bottom:3px}
+.mc-desc{font-size:.72rem;color:var(--muted);line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.mc-price{font-size:.92rem;font-weight:700;color:var(--blue)}
+.mc-price-old{font-size:.72rem;color:#bbb;text-decoration:line-through;margin-right:4px}
+.mc-add{
+  background:var(--blue);color:#fff;border:none;
+  width:30px;height:30px;border-radius:8px;font-size:1.1rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .25s;flex-shrink:0;font-family:'DM Sans',sans-serif;line-height:1;
+}
+.mc-add:hover{background:var(--blue2);transform:scale(1.12)}
+
+/* ══ STORY ══ */
+.story-section{padding:80px 24px;background:#fff}
+.story-inner{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.story-visual{
+  aspect-ratio:1;background:linear-gradient(135deg,var(--ice2) 0%,var(--ice3) 100%);
+  border-radius:24px;display:flex;align-items:center;justify-content:center;
+  font-size:9rem;border:1px solid var(--border2);
+}
+.story-text-p{font-size:.88rem;color:var(--muted);line-height:1.85;margin-top:14px}
+
+/* ══ ORDER OPTIONS CALL SECTION ══ */
+.contact-section{
+  background:linear-gradient(135deg,var(--blue3) 0%,var(--blue2) 100%);
+  padding:70px 24px;text-align:center;
+}
+.contact-inner{max-width:680px;margin:0 auto}
+.contact-section .sec-eyebrow{color:var(--skylt)}
+.contact-section .sec-title{color:#fff}
+.contact-section .sec-title em{color:var(--skylt)}
+.contact-section .sec-sub{color:rgba(255,255,255,.65);max-width:100%}
+.contact-cards{display:flex;gap:16px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.contact-card{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  border-radius:20px;padding:28px 32px;min-width:180px;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  cursor:pointer;transition:all .3s;text-decoration:none;font-family:'DM Sans',sans-serif;
+}
+.contact-card:hover{background:rgba(255,255,255,.2);transform:translateY(-5px)}
+.contact-card-icon{font-size:2rem}
+.contact-card-name{font-size:.9rem;font-weight:700;color:#fff}
+.contact-card-detail{font-size:.75rem;color:rgba(255,255,255,.65)}
+.contact-card.wa-card{background:rgba(37,211,102,.15);border-color:rgba(37,211,102,.3)}
+.contact-card.wa-card:hover{background:rgba(37,211,102,.3)}
+
+/* ══ FOOTER ══ */
+footer{background:var(--blue4);padding:56px 28px 32px;border-top:1px solid rgba(255,255,255,.06)}
+.footer-inner{max-width:1040px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:10px}
+.footer-logo em{color:var(--skylt);font-style:italic}
+.footer-desc{font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.8;max-width:240px}
+.footer-h{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--sky);margin-bottom:16px;font-weight:600}
+.footer-links{display:flex;flex-direction:column;gap:9px}
+.footer-link{font-size:.8rem;color:rgba(255,255,255,.5);cursor:pointer;transition:color .2s;text-decoration:none;font-weight:400}
+.footer-link:hover{color:var(--skylt)}
+.footer-hr{height:1px;background:rgba(255,255,255,.07);margin-bottom:24px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.3);letter-spacing:.5px}
+
+/* ══ TOAST ══ */
+.toast{
+  position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(100px);
+  background:var(--blue3);color:#fff;padding:12px 26px;
+  border-radius:50px;font-size:.8rem;font-weight:600;letter-spacing:.3px;
+  z-index:9000;transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+  white-space:nowrap;box-shadow:0 8px 24px rgba(13,66,102,.3);
+  border-left:3px solid var(--sky);
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:768px){
+  nav{padding:0 14px;height:60px}
+  .nav-links{display:none}
+  .story-inner{grid-template-columns:1fr;gap:32px}
+  .footer-grid{grid-template-columns:1fr}
+  .stat{padding:16px 20px}
+  .menu-grid{grid-template-columns:1fr}
+  .lm-branches{gap:8px}
+}
+@media(max-width:480px){
+  .hero-stats{width:100%;border-radius:16px}
+  .stat{border-right:none !important;border-bottom:1px solid var(--border)}
+  .stat:last-child{border-bottom:none}
+  .hours-bar{gap:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════
+     LOCATION / ORDER TYPE MODAL
+════════════════════════════════ -->
+<div id="loc-modal">
+  <div class="lm-box">
+    <div class="lm-logo">Churn <em>Station</em></div>
+    <div class="lm-tag">Premium Ice Cream &amp; Desserts · Lahore</div>
+
+    <!-- STEP 1: Order type -->
+    <div id="lm-step1">
+      <div class="lm-step-h">How would you like to order?</div>
+      <div class="lm-step-p">Choose delivery or come pick it up yourself.</div>
+      <div class="lm-type-grid">
+        <button class="lm-type-btn" onclick="selectOrderType('delivery')">
+          <span class="lm-type-icon">🛵</span>
+          <span class="lm-type-name">Delivery</span>
+          <span class="lm-type-desc">Order to your door</span>
+        </button>
+        <button class="lm-type-btn" onclick="selectOrderType('pickup')">
+          <span class="lm-type-icon">🏪</span>
+          <span class="lm-type-name">Pick Up</span>
+          <span class="lm-type-desc">Collect from branch</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Branch -->
+    <div id="lm-step2" style="display:none">
+      <div class="lm-step-h" id="lm-step2-h">Select your nearest branch</div>
+      <div class="lm-step-p" id="lm-step2-p">We'll make sure your order is ready.</div>
+
+      <!-- User location detect -->
+      <button class="lm-userloc-btn" onclick="detectUserLocation()">
+        📍 &nbsp; Use My Current Location
+      </button>
+      <div class="lm-userloc-status" id="lm-loc-status"></div>
+
+      <div class="lm-branches">
+        <button class="lm-branch-btn" onclick="selectBranch('Gulshan-e-Ravi')">
+          <span class="lm-branch-icon">🍦</span>
+          <div>
+            <div class="lm-branch-name">Gulshan-e-Ravi</div>
+            <div class="lm-branch-area">Gulshan-e-Ravi, Lahore</div>
+            <div class="lm-branch-hours">🕛 00:00–02:30 &amp; 12:00–23:59 · Mon–Sun</div>
+          </div>
+        </button>
+        <button class="lm-branch-btn" onclick="selectBranch('Sabzazar')">
+          <span class="lm-branch-icon">🍦</span>
+          <div>
+            <div class="lm-branch-name">Sabzazar</div>
+            <div class="lm-branch-area">Sabzazar Scheme, Lahore</div>
+            <div class="lm-branch-hours">🕛 00:00–02:30 &amp; 12:00–23:59 · Mon–Sun</div>
+          </div>
+        </button>
+        <button class="lm-branch-btn" onclick="selectBranch('Iqbal Town')">
+          <span class="lm-branch-icon">🍦</span>
+          <div>
+            <div class="lm-branch-name">Iqbal Town</div>
+            <div class="lm-branch-area">Iqbal Town, Lahore</div>
+            <div class="lm-branch-hours">🕛 00:00–02:30 &amp; 12:00–23:59 · Mon–Sun</div>
+          </div>
+        </button>
+      </div>
+
+      <button class="lm-confirm-btn" id="lm-confirm-btn" onclick="confirmLocation()">Continue →</button>
+      <button class="lm-back" onclick="goBack()">← Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════
+     ORDER OPTIONS MODAL (WA / Call)
+════════════════════════════ -->
+<div id="order-modal">
+  <div class="om-box">
+    <button class="om-close" onclick="closeOrderModal()">✕</button>
+    <div class="om-title">Place Your Order</div>
+    <div class="om-sub" id="om-sub">Choose how you'd like to send your order</div>
+    <div class="om-options">
+      <a class="om-option wa" id="om-wa-btn" href="#" onclick="sendToWhatsApp();return false;">
+        <span class="om-option-icon">💬</span>
+        <div>
+          <div class="om-option-name">WhatsApp Order</div>
+          <div class="om-option-desc">Send your cart directly to our team</div>
+        </div>
+      </a>
+      <a class="om-option call" href="tel:+923431384118">
+        <span class="om-option-icon">📞</span>
+        <div>
+          <div class="om-option-name">Call to Order</div>
+          <div class="om-option-desc">0343-1384118 · Talk to our team</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════
+     CART SIDEBAR
+════════════ -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div id="cart-sidebar">
+  <div class="cart-head">
+    <h3>🛒 &nbsp;Your Order</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-info-bar" id="cart-info-bar">
+    📍 <span id="cart-branch-label">No branch selected</span>
+    <span class="cart-info-tag" id="cart-type-tag">–</span>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty">
+      <span class="cart-empty-icon">🍦</span>
+      <p>Your cart is empty.<br>Add something delicious!</p>
+    </div>
+  </div>
+  <div class="cart-foot">
+    <div class="cart-total">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-val" id="cart-total">Rs. 0</span>
+    </div>
+    <button class="cart-order-btn" onclick="openOrderModal()">
+      Place Order ✦
+    </button>
+  </div>
+</div>
+
+<!-- ════════════
+     NAVIGATION
+════════════ -->
+<nav id="navbar">
+  <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Churn <em>Station</em></div>
+  <div class="nav-links">
+    <a class="nav-link" href="#menu">Menu</a>
+    <a class="nav-link" href="#story">Our Story</a>
+    <a class="nav-link" href="#contact">Contact</a>
+  </div>
+  <button class="nav-pill" onclick="document.getElementById('loc-modal').style.display='flex'">
+    <span>📍</span><span id="nav-loc-label">Choose Location</span>
+  </button>
+  <button class="nav-cart-btn" onclick="openCart()">
+    🛒
+    <div class="cart-badge" id="cart-badge">0</div>
+  </button>
+</nav>
+
+<!-- ════════════
+     HERO
+════════════ -->
+<section class="hero" id="home">
+  <div class="hero-dots"></div>
+  <div class="hero-circle1"></div>
+  <div class="hero-circle2"></div>
+
+  <div class="hero-eyebrow">
+    <div class="hero-dot"></div>
+    Lahore's Finest Ice Cream &amp; Desserts
+  </div>
+
+  <h1>
+    Crafted with<br>
+    <em>Passion &amp; Ice</em>
+  </h1>
+
+  <p class="hero-sub">
+    Artisanal ice creams, gooey brownies, rich sundaes, shakes &amp; hot chocolates — made fresh, served with love.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#menu" class="btn-primary">🍦 &nbsp; Explore Menu</a>
+    <button class="btn-outline" onclick="openOrderModal()">📞 &nbsp; Order Now</button>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-n">26+</span>
+      <span class="stat-l">Ice Cream Flavours</span>
+    </div>
+    <div class="stat">
+      <span class="stat-n">3</span>
+      <span class="stat-l">Branches in Lahore</span>
+    </div>
+    <div class="stat">
+      <span class="stat-n">5</span>
+      <span class="stat-l">Sundae Varieties</span>
+    </div>
+    <div class="stat">
+      <span class="stat-n">Open</span>
+      <span class="stat-l">Till 2:30 AM</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════
+     HOURS BAR
+════════════ -->
+<div class="hours-bar">
+  <div class="hb-item">📅 <strong>Mon – Sun · Daily</strong></div>
+  <div class="hb-sep">|</div>
+  <div class="hb-item">🌙 Midnight Session: <strong>00:00 – 02:30</strong></div>
+  <div class="hb-sep">|</div>
+  <div class="hb-item">☀️ Day Session: <strong>12:00 – 23:59</strong></div>
+  <div class="hb-sep">|</div>
+  <div class="hb-item">📍 <strong>3 Locations · Lahore</strong></div>
+</div>
+
+<!-- ════════════
+     FEATURED
+════════════ -->
+<section class="feat-section">
+  <div class="feat-inner">
+    <div class="sec-eyebrow">Fan Favourites</div>
+    <div class="sec-title">Most <em>Loved</em></div>
+    <p class="sec-sub">Our top-rated creations — tried, loved, and ordered again and again.</p>
+    <div class="feat-scroll" id="feat-scroll"></div>
+  </div>
+</section>
+
+<!-- ════════════
+     MENU
+════════════ -->
+<section class="menu-section" id="menu">
+  <div class="menu-inner">
+    <div class="sec-eyebrow">Full Menu</div>
+    <div class="sec-title">Order <em>Anything</em></div>
+    <p class="sec-sub">Add items to your cart and place your order via WhatsApp or call.</p>
+
+    <div class="cat-nav" id="cat-nav"></div>
+    <div id="menu-panels"></div>
+  </div>
+</section>
+
+<!-- ════════════
+     STORY
+════════════ -->
+<section class="story-section" id="story">
+  <div class="story-inner">
+    <div class="story-visual">🍦</div>
+    <div>
+      <div class="sec-eyebrow">Our Story</div>
+      <div class="sec-title">Born from a <em>Love</em><br>of Real Flavour</div>
+      <p class="story-text-p">Churn Station was founded with one simple belief — that Lahore deserved world-class ice cream made right here at home. We source the finest ingredients, churn every batch with care, and serve it with pride across three branches.</p>
+      <p class="story-text-p">From our signature Belgian Chocolate to the fan-favourite Lotus Cheesecake, each flavour is crafted to be an experience. Stop by Gulshan-e-Ravi, Sabzazar or Iqbal Town — or just order in.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#menu" class="btn-primary" style="font-size:.82rem;padding:12px 26px">🍦 View Menu</a>
+        <a href="tel:+923431384118" class="btn-outline" style="font-size:.82rem;padding:12px 26px">📞 Call Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════
+     CONTACT
+════════════ -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="sec-eyebrow">Get In Touch</div>
+    <div class="sec-title">Order <em>Now</em></div>
+    <p class="sec-sub">Two ways to place your order — pick what's easiest for you.</p>
+    <div class="contact-cards">
+      <a class="contact-card wa-card" href="https://wa.me/923431384118" target="_blank">
+        <span class="contact-card-icon">💬</span>
+        <span class="contact-card-name">WhatsApp</span>
+        <span class="contact-card-detail">0343-1384118</span>
+        <span class="contact-card-detail">Tap to chat &amp; order</span>
+      </a>
+      <a class="contact-card" href="tel:+923431384118">
+        <span class="contact-card-icon">📞</span>
+        <span class="contact-card-name">Call Us</span>
+        <span class="contact-card-detail">0343-1384118</span>
+        <span class="contact-card-detail">Talk to our team directly</span>
+      </a>
+      <div class="contact-card" style="cursor:default">
+        <span class="contact-card-icon">📍</span>
+        <span class="contact-card-name">3 Branches</span>
+        <span class="contact-card-detail">Gulshan-e-Ravi</span>
+        <span class="contact-card-detail">Sabzazar · Iqbal Town</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════
+     FOOTER
+════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Churn <em>Station</em></div>
+        <p class="footer-desc">Lahore's premium artisanal ice cream destination. Open late for your late-night cravings.</p>
+        <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+          <a href="https://wa.me/923431384118" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:10px 18px;border-radius:10px;font-size:.78rem;font-weight:700;text-decoration:none;transition:all .25s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">💬 WhatsApp</a>
+          <a href="tel:+923431384118" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);color:#fff;padding:10px 18px;border-radius:10px;font-size:.78rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,.15);transition:all .25s" onmouseover="this.style.background='rgba(255,255,255,.2)'" onmouseout="this.style.background='rgba(255,255,255,.1)'">📞 0343-1384118</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Menu</div>
+        <div class="footer-links">
+          <a class="footer-link" href="#menu" onclick="switchTab('ice-cream')">Ice Cream Scoops</a>
+          <a class="footer-link" href="#menu" onclick="switchTab('fudgy')">Fudgy Treats</a>
+          <a class="footer-link" href="#menu" onclick="switchTab('cookie-dough')">Cookie Dough</a>
+          <a class="footer-link" href="#menu" onclick="switchTab('sundaes')">Sundaes</a>
+          <a class="footer-link" href="#menu" onclick="switchTab('pints')">Pints Ice Cream</a>
+          <a class="footer-link" href="#menu" onclick="switchTab('hot-choc')">Hot Chocolates</a>
+          <a class="footer-link" href="#menu" onclick="switchTab('shakes')">Shakes</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Our Branches</div>
+        <div class="footer-links">
+          <span class="footer-link">📍 Gulshan-e-Ravi, Lahore</span>
+          <span class="footer-link">📍 Sabzazar Scheme, Lahore</span>
+          <span class="footer-link">📍 Iqbal Town, Lahore</span>
+          <br>
+          <div class="footer-h" style="margin-top:16px">Hours</div>
+          <span class="footer-link">🌙 00:00 – 02:30</span>
+          <span class="footer-link">☀️ 12:00 – 23:59</span>
+          <span class="footer-link">Mon – Sun (Every Day)</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-hr"></div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Churn Station · Crafted with love in Lahore</div>
+      <div class="footer-copy">📞 0343-1384118</div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════
+// CONFIG
+// ═══════════════════
+const WHATSAPP = '923431384118';
+const PHONE    = '+923431384118';
+
+// ═══════════════════
+// MENU DATA
+// ═══════════════════
+const CAT_ORDER = ['ice-cream','fudgy','cookie-dough','deals','sundaes','pints','hot-choc','shakes'];
+const CATS = {
+  'ice-cream':{ label:'Ice Cream', icon:'🍦', items:[
+    {n:'French Vanilla Ice Cream',p:130,d:'Rich, creamy goodness of french vanilla ice cream — smooth and velvety.',pop:false},
+    {n:'Dusty Dune Ice Cream',p:130,d:'Our favourite chocolate ice cream from the finest cocoa.',pop:false},
+    {n:'Cookies & Cream Ice Cream',p:130,d:'Rich vanilla ice cream swirled with chunks of crunchy cookies.',pop:false},
+    {n:'Cookie Monster Ice Cream',p:130,d:'Whimsical creamy vanilla ice cream — fun as it is delicious.',pop:false},
+    {n:'Dairy Delight Ice Cream',p:130,d:'Rich chocolate ice cream expertly blended with creamy goodness.',pop:true},
+    {n:'Choco Frenzy Ice Cream',p:130,d:'Velvety chocolate ice cream swirled with luscious chocolate fudge.',pop:false},
+    {n:'Vanilla Fudge Ice Cream',p:130,d:'Velvety vanilla ice cream swirled with luscious chocolate fudge.',pop:false},
+    {n:'Churn Special Ice Cream',p:130,d:'Creamy vanilla blended with peanut butter for a perfect nutty flavour.',pop:false},
+    {n:'Belgian Chocolate Ice Cream',p:130,d:'Finest Belgian cocoa — each scoop offers intense velvety depth.',pop:true},
+    {n:'Morning Joe Ice Cream',p:130,d:'Vanilla ice cream with rich coffee notes for a sweet start.',pop:false},
+    {n:'Pistachio Pinch Ice Cream',p:130,d:'Real pistachio nuts — rich & nutty essence in every scoop.',pop:false},
+    {n:'Nutella Swirl Ice Cream',p:130,d:'Chocolate hazelnut blended with ribbons of luscious Nutella.',pop:true},
+    {n:'Choco Chuckwagon Ice Cream',p:130,d:'Chocolate ice cream, peanut butter & chocolate chips.',pop:false},
+    {n:'Caramel Almond Ice Cream',p:130,d:'Vanilla ice cream with caramel sauce and crunchy almonds.',pop:false},
+    {n:'Blueberry Binge Ice Cream',p:130,d:'Ripe, juicy blueberries — perfect balance of creamy and tangy.',pop:true},
+    {n:'Strawberry Madness Ice Cream',p:130,d:'Crafted with real ripe strawberries for authentic flavour.',pop:false},
+    {n:'Raspberry Ripple Ice Cream',p:130,d:'Vanilla ice cream with vibrant ribbons of real raspberry puree.',pop:false},
+    {n:'Strawberry Cheesecake Ice Cream',p:130,d:'Creamy cheesecake infused with vibrant strawberry puree.',pop:true},
+    {n:'Marshmallow Fluff Ice Cream',p:130,d:'Classic vanilla lovingly blended with fluffy marshmallow chunks.',pop:false},
+    {n:'Taffy Popcorn Ice Cream',p:130,d:'Vanilla ice cream swirled with rich caramel for a popcorn-inspired treat.',pop:false},
+    {n:'Kulfaccio Ice Cream',p:130,d:'Pistachios, almonds and sweet velvety khoya — a desi classic.',pop:false},
+    {n:'Mint Chocolate Ice Cream',p:130,d:'Refreshing mint blended with rich chocolate chunks.',pop:false},
+    {n:'Coconut Ice Cream',p:130,d:'Real coconut milk and shredded coconut — luscious and smooth.',pop:false},
+    {n:'Pina Colada Ice Cream',p:130,d:'Sweet pineapple and rich coconut — a tropical delight.',pop:false},
+    {n:'Lotus Cheesecake Ice Cream',p:130,d:'Velvety cheesecake infused with rich Lotus Biscoff flavour.',pop:true},
+    {n:'Lotus Biscoff Ice Cream',p:130,d:'Smooth vanilla with crunchy caramelized Lotus Biscoff bits.',pop:false},
+  ]},
+  'fudgy':{ label:'Fudgy Treats', icon:'🍫', items:[
+    {n:'Brownie & Scoop Fudgy Treat',p:360,d:'Gooey fudgy brownie with chocolate fudge sauce and an ice cream scoop.',pop:false},
+    {n:'Brownie Fudgy Treat',p:230,d:'Gooey and fudgy brownie lathered with chocolate fudge sauce.',pop:false},
+  ]},
+  'cookie-dough':{ label:'Cookie Dough', icon:'🍪', items:[
+    {n:'Cookie Dough',p:549,d:'Warm, gooey, and loaded with rich chocolate and cookie goodness.',pop:false},
+    {n:'Cookie Dough with Scoop',p:629,d:'Melt-in-your-mouth cookie dough paired with a scoop of ice cream.',pop:false},
+  ]},
+  'deals':{ label:'Celebration Deals', icon:'🎉', items:[
+    {n:'Celebration Deal',p:649,priceOld:720,d:'Two Brownie and Scoop Fudgy Treats — the perfect sharing deal.',pop:false},
+  ]},
+  'sundaes':{ label:'Sundaes', icon:'🍨', items:[
+    {n:'Brownie Fudge Sundae',p:350,d:'Brownie chunks, velvety chocolate sauce and ice cream.',pop:false},
+    {n:'Cookie Junction Sundae',p:350,d:'Creamy dessert topped with crunchy cookie chunks.',pop:false},
+    {n:'Caramel & Cream Sundae',p:350,d:'Ice cream of your choice, Oreo chunks and caramel drizzle.',pop:false},
+    {n:'Nutty Professor Sundae',p:350,d:'Rich ice cream topped with crunchy roasted nuts.',pop:false},
+    {n:'Fudge Extreme Sundae',p:350,d:'Ice cream, brownie chunks, crunchy nuts and chocolate drizzle.',pop:false},
+  ]},
+  'pints':{ label:'Pints Ice Cream', icon:'🫙', items:[
+    {n:'Special Churn Pints Ice Cream',p:650,d:'Vanilla-peanut butter ice cream — generously loaded.',pop:false},
+    {n:'Raspberry Ripple Pints Ice Cream',p:650,d:'Vanilla ice cream with vibrant real raspberry ribbon.',pop:false},
+    {n:'Blueberry Binge Pints Ice Cream',p:650,d:'Juicy blueberries in creamy vanilla — tangy and perfect.',pop:false},
+    {n:'Cookie Monster Pints Ice Cream',p:650,d:'Whimsical vanilla cookie dough pint.',pop:false},
+    {n:'Strawberry Cheesecake Pints Ice Cream',p:650,d:'Cheesecake ice cream with strawberry puree and graham cracker bits.',pop:false},
+    {n:'Nutella Swirl Pints Ice Cream',p:650,d:'Chocolate hazelnut with ribbons of Nutella — a pint of heaven.',pop:false},
+    {n:'Pistachio Pinch Pints Ice Cream',p:650,d:'Real pistachio nuts — rich nutty essence in pint form.',pop:false},
+  ]},
+  'hot-choc':{ label:'Hot Chocolates', icon:'☕', items:[
+    {n:'Original Hot Chocolate',p:300,d:'Rich melted chocolate, steamed milk, topped with whipped cream.',pop:false},
+    {n:'Cookies & Cream Hot Chocolate',p:300,d:'Rich hot chocolate with whipped cream and crushed Oreos.',pop:false},
+    {n:'Peanut Butter Hot Chocolate',p:300,d:'Chocolate and peanut butter — indulgent and warm.',pop:false},
+    {n:'Nutella Hot Chocolate',p:300,d:'Creamy hot chocolate drizzled with Nutella hazelnut spread.',pop:false},
+    {n:'Caramel Hot Chocolate',p:300,d:'Sweet caramel chocolate — perfect for cold nights.',pop:false},
+    {n:'Coffee Hot Chocolate',p:300,d:'Coffee and chocolate combined in a rich, warming cup.',pop:false},
+  ]},
+  'shakes':{ label:'Shakes', icon:'🥤', items:[
+    {n:'French Vanilla Shake',p:399,d:'Classic French Vanilla milkshake.',pop:false},
+    {n:'Dusty Dune Shake',p:399,d:'Rich chocolate Dusty Dune shake.',pop:false},
+    {n:'Cookies & Cream Shake',p:399,d:'Cookies & Cream blended shake.',pop:false},
+    {n:'Cookie Monster Shake',p:399,d:'Cookie Monster blended shake.',pop:false},
+    {n:'Dairy Delight Shake',p:399,d:'Rich chocolate Dairy Delight shake.',pop:false},
+    {n:'Choco Frenzy Shake',p:399,d:'Choco Frenzy blended shake.',pop:false},
+    {n:'Vanilla Fudge Shake',p:399,d:'Vanilla Fudge blended shake.',pop:false},
+    {n:'Churn Special Shake',p:399,d:'Churn Special signature shake.',pop:false},
+    {n:'Belgian Chocolate Shake',p:399,d:'Rich Belgian Chocolate shake.',pop:false},
+    {n:'Morning Joe Shake',p:399,d:'Coffee-infused Morning Joe shake.',pop:false},
+    {n:'Pistachio Pinch Shake',p:399,d:'Pistachio Pinch blended shake.',pop:false},
+    {n:'Nutella Swirl Shake',p:399,d:'Nutella Swirl blended shake.',pop:false},
+    {n:'Choco Chuckwagon Shake',p:399,d:'Choco Chuckwagon blended shake.',pop:false},
+    {n:'Caramel Almond Shake',p:399,d:'Caramel Almond blended shake.',pop:false},
+    {n:'Blueberry Binge Shake',p:399,d:'Blueberry Binge blended shake.',pop:false},
+    {n:'Strawberry Madness Shake',p:399,d:'Strawberry Madness blended shake.',pop:false},
+    {n:'Raspberry Ripple Shake',p:399,d:'Raspberry Ripple blended shake.',pop:false},
+    {n:'Strawberry Cheesecake Shake',p:399,d:'Strawberry Cheesecake blended shake.',pop:false},
+    {n:'Kulfaccio Shake',p:399,d:'Kulfaccio blended shake.',pop:false},
+    {n:'Mint Chocolate Shake',p:399,d:'Mint Chocolate blended shake.',pop:false},
+  ]},
+};
+
+// ═══════════════════
+// STATE
+// ═══════════════════
+let cart = [];
+let orderType = '';
+let branch = '';
+let activeTab = 'ice-cream';
+
+// ═══════════════════
+// LOCATION FLOW
+// ═══════════════════
+function selectOrderType(type) {
+  orderType = type;
+  document.getElementById('lm-step1').style.display = 'none';
+  document.getElementById('lm-step2').style.display = 'block';
+  const h = document.getElementById('lm-step2-h');
+  const p = document.getElementById('lm-step2-p');
+  if (type === 'delivery') {
+    h.textContent = 'Select nearest branch for delivery';
+    p.textContent = 'Our team will deliver to your area.';
+  } else {
+    h.textContent = 'Which branch will you pick up from?';
+    p.textContent = 'Your order will be ready at the selected branch.';
+  }
+}
+
+function goBack() {
+  document.getElementById('lm-step2').style.display = 'none';
+  document.getElementById('lm-step1').style.display = 'block';
+  branch = '';
+  document.querySelectorAll('.lm-branch-btn').forEach(b => b.classList.remove('sel'));
+  document.getElementById('lm-confirm-btn').classList.remove('show');
+  document.getElementById('lm-loc-status').textContent = '';
+}
+
+function selectBranch(name) {
+  branch = name;
+  document.querySelectorAll('.lm-branch-btn').forEach(b => b.classList.remove('sel'));
+  event.currentTarget.classList.add('sel');
+  document.getElementById('lm-confirm-btn').classList.add('show');
+}
+
+function detectUserLocation() {
+  const status = document.getElementById('lm-loc-status');
+  if (!navigator.geolocation) {
+    status.textContent = '⚠️ Geolocation not supported by your browser.';
+    return;
+  }
+  status.textContent = '📡 Detecting your location...';
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      const lat = pos.coords.latitude;
+      const lng = pos.coords.longitude;
+      // Lahore branches approximate coords
+      const branches = [
+        {name:'Gulshan-e-Ravi', lat:31.5370, lng:74.3060},
+        {name:'Sabzazar', lat:31.5600, lng:74.3000},
+        {name:'Iqbal Town', lat:31.5050, lng:74.3200},
+      ];
+      let closest = branches[0], minDist = Infinity;
+      branches.forEach(b => {
+        const d = Math.sqrt(Math.pow(lat-b.lat,2)+Math.pow(lng-b.lng,2));
+        if (d < minDist) { minDist = d; closest = b; }
+      });
+      status.textContent = '✅ Nearest branch: ' + closest.name;
+      // Auto-select that branch
+      document.querySelectorAll('.lm-branch-btn').forEach(btn => {
+        if (btn.querySelector('.lm-branch-name').textContent === closest.name) {
+          btn.click();
+        }
+      });
+    },
+    (err) => {
+      if (err.code === 1) status.textContent = '⚠️ Location access denied. Please select manually.';
+      else status.textContent = '⚠️ Could not get location. Please select manually.';
+    }
+  );
+}
+
+function confirmLocation() {
+  if (!branch) { showToast('Please select a branch'); return; }
+  document.getElementById('loc-modal').style.display = 'none';
+  document.getElementById('nav-loc-label').textContent = branch;
+  document.getElementById('cart-branch-label').textContent = branch;
+  document.getElementById('cart-type-tag').textContent = orderType === 'delivery' ? '🛵 Delivery' : '🏪 Pick Up';
+}
+
+// ═══════════════════
+// BUILD MENU
+// ═══════════════════
+function buildMenu() {
+  const nav = document.getElementById('cat-nav');
+  const panels = document.getElementById('menu-panels');
+
+  CAT_ORDER.forEach((key,idx) => {
+    const cat = CATS[key];
+
+    // Tab button
+    const tab = document.createElement('button');
+    tab.className = 'cat-tab' + (idx === 0 ? ' active' : '');
+    tab.dataset.tab = key;
+    tab.innerHTML = cat.icon + ' ' + cat.label;
+    tab.addEventListener('click', () => switchTab(key));
+    nav.appendChild(tab);
+
+    // Panel
+    const panel = document.createElement('div');
+    panel.className = 'cat-panel' + (idx === 0 ? ' active' : '');
+    panel.id = 'panel-' + key;
+
+    const grid = document.createElement('div');
+    grid.className = 'menu-grid';
+
+    cat.items.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'menu-card' + (item.pop ? ' pop' : '');
+      const safeName = item.n.replace(/'/g,"\\'");
+      card.innerHTML = `
+        <div class="mc-emoji">${cat.icon}</div>
+        <div class="mc-body">
+          <div class="mc-name">${item.n}</div>
+          <div class="mc-desc">${item.d}</div>
+          <div class="mc-foot">
+            <div class="mc-price">
+              ${item.priceOld ? `<span class="mc-price-old">Rs.${item.priceOld}</span>` : ''}
+              Rs. ${item.p}
+            </div>
+            <button class="mc-add" onclick="addToCart('${safeName}',${item.p},'${cat.icon}')">+</button>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+    panel.appendChild(grid);
+    panels.appendChild(panel);
+  });
+}
+
+function switchTab(key) {
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.cat-panel').forEach(p => p.classList.remove('active'));
+  const tab = document.querySelector(`.cat-tab[data-tab="${key}"]`);
+  const panel = document.getElementById('panel-'+key);
+  if (tab) tab.classList.add('active');
+  if (panel) panel.classList.add('active');
+  activeTab = key;
+}
+
+function buildFeatured() {
+  const scroll = document.getElementById('feat-scroll');
+  CAT_ORDER.forEach(key => {
+    CATS[key].items.filter(i => i.pop).forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'feat-card';
+      const safeName = item.n.replace(/'/g,"\\'");
+      card.innerHTML = `
+        <div class="feat-img">${CATS[key].icon}</div>
+        <div class="feat-body">
+          <div class="feat-name">${item.n}</div>
+          <div class="feat-price">Rs. ${item.p}</div>
+        </div>
+        <div class="feat-badge">Popular</div>
+        <button class="feat-add" onclick="addToCart('${safeName}',${item.p},'${CATS[key].icon}')">+</button>
+      `;
+      scroll.appendChild(card);
+    });
+  });
+}
+
+// ═══════════════════
+// CART
+// ═══════════════════
+function addToCart(name, price, emoji) {
+  const ex = cart.find(i => i.name === name);
+  if (ex) ex.qty++;
+  else cart.push({name, price, emoji, qty:1});
+  updateCart();
+  showToast('✓ ' + name.split(' ').slice(0,3).join(' ') + ' added');
+  openCart();
+}
+
+function changeQty(name, delta) {
+  const item = cart.find(i => i.name === name);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) cart = cart.filter(i => i.name !== name);
+  updateCart();
+}
+
+function removeItem(name) {
+  cart = cart.filter(i => i.name !== name);
+  updateCart();
+}
+
+function updateCart() {
+  const total = cart.reduce((s,i) => s + i.price*i.qty, 0);
+  const count = cart.reduce((s,i) => s + i.qty, 0);
+  const badge = document.getElementById('cart-badge');
+  badge.style.display = count > 0 ? 'flex' : 'none';
+  badge.textContent = count;
+  document.getElementById('cart-total').textContent = 'Rs. ' + total.toLocaleString();
+  renderCartItems();
+}
+
+function renderCartItems() {
+  const el = document.getElementById('cart-items');
+  if (!cart.length) {
+    el.innerHTML = `<div class="cart-empty"><span class="cart-empty-icon">🍦</span><p>Your cart is empty.<br>Add something delicious!</p></div>`;
+    return;
+  }
+  el.innerHTML = cart.map(item => {
+    const s = item.name.replace(/'/g,"\\'");
+    return `
+    <div class="ci">
+      <div class="ci-icon">${item.emoji}</div>
+      <div class="ci-info">
+        <div class="ci-name">${item.name}</div>
+        <div class="ci-price">Rs. ${(item.price*item.qty).toLocaleString()}</div>
+        <div class="ci-qty">
+          <button class="qty-btn" onclick="changeQty('${s}',-1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty('${s}',1)">+</button>
+          <button class="ci-del" onclick="removeItem('${s}')">🗑</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function openCart() {
+  document.getElementById('cart-sidebar').classList.add('open');
+  document.getElementById('cart-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  document.getElementById('cart-sidebar').classList.remove('open');
+  document.getElementById('cart-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ═══════════════════
+// ORDER MODAL
+// ═══════════════════
+function openOrderModal() {
+  if (cart.length > 0) {
+    // Update sub text with cart summary
+    const count = cart.reduce((s,i)=>s+i.qty,0);
+    const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+    document.getElementById('om-sub').textContent =
+      count + ' item(s) · Rs. ' + total.toLocaleString() + ' · ' + (branch || 'No branch') + ' · ' + (orderType||'');
+  }
+  document.getElementById('order-modal').classList.add('open');
+  closeCart();
+}
+
+function closeOrderModal() {
+  document.getElementById('order-modal').classList.remove('open');
+}
+
+// ═══════════════════
+// WHATSAPP
+// ═══════════════════
+function sendToWhatsApp() {
+  if (!cart.length) { showToast('Cart is empty!'); return; }
+  const loc = branch || 'Not specified';
+  const type = orderType === 'delivery' ? '🛵 Delivery' : '🏪 Pick Up';
+  let msg = `🍦 *New Order — Churn Station*\n`;
+  msg += `📍 Branch: ${loc}\n`;
+  msg += `${type}\n\n`;
+  msg += `*Items Ordered:*\n`;
+  cart.forEach(i => {
+    msg += `• ${i.name} × ${i.qty} = Rs. ${(i.price*i.qty).toLocaleString()}\n`;
+  });
+  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  msg += `\n💰 *Total: Rs. ${total.toLocaleString()}*\n\nPlease confirm. Thank you! 🙏`;
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
+  closeOrderModal();
+}
+
+// ═══════════════════
+// TOAST
+// ═══════════════════
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+// ═══════════════════
+// SCROLL NAV
+// ═══════════════════
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', scrollY > 50);
+});
+
+// ═══════════════════
+// INIT
+// ═══════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  buildMenu();
+  buildFeatured();
+  updateCart();
+});
+</script>
+</body>
+</html>
